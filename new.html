@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Allocation Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="top-bar">
+        <div class="header-content">
+            <div class="logo">
+                <img src="cu logo.png" alt="University Logo" class="logo-img">
+                <h1>Book a Room</h1>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Bookings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Settings</a>
+                    </li>
+                    <li class="nav-item search-item">
+                        <div class="search">
+                            <input type="text" placeholder="Search in site" aria-label="Search rooms">
+                            <button type="button" class="search-button" aria-label="Search">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Rooms Available for Booking -->
+        <section class="room-list-portion" aria-label="Rooms available for booking">
+            <h2 class="heading">Rooms available for booking</h2>
+            <div class="room-list">
+                <article class="room">
+                    <img src="images/room-icon.png" alt="Room Icon" loading="lazy">
+                    <p>F101</p>
+                    <span class="status available">Available</span>
+                    <button class="book-button">Book Now</button>
+                </article>
+                
+                <article class="room">
+                    <img src="images/room-icon.png" alt="Room Icon" loading="lazy">
+                    <p>F201</p>
+                    <span class="status booked">Booked</span>
+                    <button class="book-button" disabled>Unavailable</button>
+                </article>
+                
+                <article class="room">
+                    <img src="images/room-icon.png" alt="Room Icon" loading="lazy">
+                    <p>F301</p>
+                    <span class="status available">Available</span>
+                    <button class="book-button">Book Now</button>
+                </article>
+                
+                <article class="room">
+                    <img src="images/room-icon.png" alt="Room Icon" loading="lazy">
+                    <p>F401</p>
+                    <span class="status available">Available</span>
+                    <button class="book-button">Book Now</button>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>&copy; 2023 Classroom Allocation Portal. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Accessibility</a>
+        </div>
+    </footer>
+
+    <script>
+        // Future JavaScript can be added here
+        document.querySelectorAll('.book-button').forEach(button => {
+            button.addEventListener('click', function() {
+                if (!this.disabled) {
+                    const room = this.closest('.room').querySelector('p').textContent;
+                    alert(`Booking request for ${room} has been submitted!`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

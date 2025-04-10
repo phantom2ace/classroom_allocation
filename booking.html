@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Allocation Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+           <!-- Full-width header container -->
+    <div class="header-container">
+        <header class="header">
+            <div class="logo">
+                <img src="cu logo.png" alt="Logo">
+                <span class="logo-text">Classroom Allocation Portal</span>
+            </div>
+            
+            <button class="mobile-menu-toggle">☰</button>
+            
+            <div class="nav-links">
+                <a href="index.html">Dashboard</a>
+                <a href="#">Bookings</a>
+                <a href="#">Settings</a>
+            </div> 
+                       
+        </header>
+    </div>
+    <div class="search">
+        <input type="text" placeholder="Search in site" aria-label="Search rooms">
+        <button type="button" class="search-button" aria-label="Search">
+            <i class="fas fa-search">Search</i>
+          </button>
+    </div>
+
+     <!-- Main Content -->
+     <main class="container">
+
+        <!-- Rooms Available for Booking -->
+        <section class="room-list-portion" aria-label="Rooms available for booking">
+            <h2 class="heading">Rooms available for booking</h2>
+            <div class="room-list">
+                <article class="room">
+                    <img src="cu logo.png" alt="Room Icon" loading="lazy">
+                    <p>F101</p>
+                    <span class="status available">Available</span>
+                    <button class="book-button">Book Now</button>
+                </article>
+                
+                <article class="room">
+                    <img src="cu logo.png" alt="Room Icon" loading="lazy">
+                    <p>F201</p>
+                    <span class="status booked">Booked until 2:30pm</span>
+                    <button class="book-button" disabled>Unavailable</button>
+                </article>
+                
+                <article class="room">
+                    <img src="cu logo.png" alt="Room Icon" loading="lazy">
+                    <p>F301</p>
+                    <span class="status available">Available</span>
+                    <button class="book-button">Book Now</button>
+                </article>
+                
+                <article class="room">
+                    <img src="cu logo.png" alt="Room Icon" loading="lazy">
+                    <p>F401</p>
+                    <span class="status available">Available</span>
+                    <button class="book-button">Book Now</button>
+                </article>
+            </div>
+        </section>
+    </main> 
+       
+
+          <!-- Footer -->
+          <footer class="footer">
+            <p>© 2025 Classroom Allocation Portal. All Rights Reserved. Group 5</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Accessibility</a>
+            </div>
+        </footer>
+        <script src="cu.js"></script>
+
+        <script>
+            // Future JavaScript can be added here
+            document.querySelectorAll('.book-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    if (!this.disabled) {
+                        const room = this.closest('.room').querySelector('p').textContent;
+                        alert(`Booking request for ${room} has been submitted!`);
+                    }
+                });
+            });
+        </script>
+</body>
+</html>

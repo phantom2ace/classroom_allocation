@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Allocation System - Login</title>
+    <link rel="stylesheet" href="login.css">
+   
+</head>
+<body>
+    <!-- Login Page Header -->
+    <header class="login-header-container">
+        <div class="login-header">
+            <div class="logo">
+                <img src="cu logo.png" alt="Logo">
+                <span class="logo-text">Classroom Allocation Portal</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Login Content -->
+    <main class="container">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <h1 class="section-title">Sign in to access your portal</h1>
+                </div>
+                
+
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="username">Username or Email</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username or email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="password-input-container">
+                            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                           
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" name="remember">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#forgot-password" class="forgot-password">Forgot password?</a>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-login">Sign In</button>
+                    </div>
+
+                    <div id="errorMessage" class="error-message"></div>
+                </form>
+
+                <div class="login-divider">
+                    <span>or</span>
+                </div>
+
+                <div class="social-login">
+                    <button type="button" class="btn btn-social btn-google">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.56 12.25C22.56 11.47 22.49 10.72 22.36 10H12V14.255H17.92C17.665 15.63 16.89 16.795 15.725 17.575V20.335H19.28C21.36 18.42 22.56 15.6 22.56 12.25Z" fill="#4285F4"/>
+                            <path d="M12 23C14.97 23 17.46 22.015 19.28 20.335L15.725 17.575C14.74 18.235 13.48 18.625 12 18.625C9.135 18.625 6.71 16.69 5.845 14.09H2.17V16.94C3.98 20.535 7.7 23 12 23Z" fill="#34A853"/>
+                            <path d="M5.845 14.09C5.625 13.43 5.5 12.725 5.5 12C5.5 11.275 5.625 10.57 5.845 9.91V7.06H2.17C1.4 8.59 1 10.27 1 12C1 13.73 1.4 15.41 2.17 16.94L5.845 14.09Z" fill="#FBBC05"/>
+                            <path d="M12 5.375C13.615 5.375 15.065 5.93 16.205 7.02L19.36 3.865C17.455 2.09 14.965 1 12 1C7.7 1 3.98 3.465 2.17 7.06L5.845 9.91C6.71 7.31 9.135 5.375 12 5.375Z" fill="#EA4335"/>
+                        </svg>
+                        Continue with Google
+                    </button>
+                    <button type="button" class="btn btn-social btn-microsoft">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.5 3H3V11.5H11.5V3Z" fill="#F25022"/>
+                            <path d="M21 3H12.5V11.5H21V3Z" fill="#7FBA00"/>
+                            <path d="M11.5 12.5H3V21H11.5V12.5Z" fill="#00A4EF"/>
+                            <path d="M21 12.5H12.5V21H21V12.5Z" fill="#FFB900"/>
+                        </svg>
+                        Continue with Microsoft
+                    </button>
+                </div>
+
+                <div class="register-link">
+                    Don't have an account? <a href="#register">Request access</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Login Page Footer -->
+    <footer class="login-footer">
+        <div class="footer-content">
+            <p>© 2025 Classroom Allocation Portal. All Rights Reserved. Group 5</p>
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#help">Help Center</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="login.js"></script>
+    
+</body>
+</html>

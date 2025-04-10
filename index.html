@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Allocation Portal</title>
+    <link rel="stylesheet" href="cu.css">
+</head>
+<body>
+    <!-- Full-width header container -->
+    <div class="header-container">
+        <header class="header">
+            <div class="logo">
+                <img src="cu logo.png" alt="Logo">
+                <span class="logo-text">Classroom Allocation Portal</span>
+            </div>
+            
+            <button class="mobile-menu-toggle">☰</button>
+            
+            <div class="nav-links">
+                <a href="#">Dashboard</a>
+                <a href="booking.html">Bookings</a>
+                <a href="#">Settings</a>
+            </div>           
+           
+        </header>
+    </div>
+
+   
+
+    <!-- Full-width hero container -->
+    <div class="hero-container">
+        <section class="hero">
+            <h1>Welcome to CU Classroom Allocation Portal</h1>
+            <p>Efficiently manage Lecture room bookings</p>
+        </section>
+    </div>
+
+    <!-- Main content container -->        
+    <div class="container">
+        <!-- User info -->
+        <div class="user-info">
+            <div class="user-avatar">KT</div>
+            <div class="user-details">
+                <h3>Kwesi Essel Turkson</h3>
+                <p>Course Rep • Computer Science • Level 300</p>
+                <p>Welcome back, manage your classroom allocations.</p>
+            </div>
+        </div>
+        
+        <!-- New booking section -->
+        <div class="new-booking">
+            <div class="booking-icon">📅</div>
+            <div class="booking-form">
+                <h2>Book a Lecture Hall</h2>
+                <p>Fill in the details to book a lecture room</p>
+                <!-- Booking actions -->
+                <div class="booking-actions">
+                    <button class="btn" onclick="window.location.href='booking.html'">Book Room</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Manage bookings section -->
+        <section class="manage-bookings">
+            <h2 class="section-title">Manage Bookings</h2>
+            <p class="section-subtitle">View and make changes to active bookings</p>
+
+            <!-- Room cards -->
+            <div class="room-cards">
+                <div class="room-card">
+                    <div class="room-icon sun">
+                        <span>☀️</span>
+                    </div>
+                    <p class="room-number">Room 101</p>
+                    <p class="room-details">Wednesday, 07/14</p>
+                    <p class="room-department">Computer science</p>
+                    <p class="room-level">Level 100</p>
+                </div>
+                <div class="room-card">
+                    <div class="room-icon calendar">
+                        <span>📅</span>
+                    </div>
+                    <p class="room-number">Room 201</p>
+                    <p class="room-details">Thursday, 07/15</p>
+                    <p class="room-department">IT</p>
+                    <p class="room-level">Level 300</p>
+                </div>
+                <div class="room-card">
+                    <div class="room-icon book">
+                        <span>📚</span>
+                    </div>
+                    <p class="room-number">Room 301</p>
+                    <p class="room-details">Friday, 07/16</p>
+                    <p class="room-department">Computer Science</p>
+                    <p class="room-level">Level 200</p>
+                </div>
+            </div>
+
+            <!-- Booking details -->
+            <div class="booking-details">
+                <div class="booking-detail">
+                    <h4>Week</h4>
+                    <p>Week of July 14, 2023</p>
+                </div>
+                <div class="booking-detail">
+                    <h4>Room Number</h4>
+                    <p>101</p>
+                </div>
+                <div class="booking-detail">
+                    <h4>Time slot</h4>
+                    <p>2:00 PM - 3:00 PM</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metrics section -->
+        <section class="metrics">
+            <h2 class="metrics-title">Booking Metrics</h2>
+            <p class="metrics-subtitle">Your booking statistics</p>
+            <div class="metrics-btn">
+                <button class="btn">View Details</button>
+            </div>
+
+            <div class="metrics-cards">
+                <div class="metrics-card">
+                    <h3>Past Bookings</h3>
+                    <p class="metrics-number">25</p>
+                    <p class="metrics-change">+15%</p>
+                </div>
+                <div class="metrics-card">
+                    <h3>Current Bookings</h3>
+                    <p class="metrics-number">15</p>
+                </div>
+                <div class="metrics-card">
+                    <h3>Upcoming Bookings</h3>
+                    <p class="metrics-number">8</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Classroom Allocation Portal. All Rights Reserved. Group 5</p>
+    </footer>
+
+    <script src="cu.js"></script>
+</body>
+</html>
