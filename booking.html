@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classroom Allocation Portal</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Classroom Booking</title>
+    <link rel="stylesheet" href="cu.css">
+   
 </head>
 <body>
-           <!-- Full-width header container -->
-    <div class="header-container">
+     <!-- Full-width header container -->
+     <div class="header-container">
         <header class="header">
             <div class="logo">
                 <img src="cu logo.png" alt="Logo">
@@ -19,79 +20,375 @@
             
             <div class="nav-links">
                 <a href="index.html">Dashboard</a>
-                <a href="#">Bookings</a>
-                <a href="#">Settings</a>
-            </div> 
-                       
+                <a href="booking.html">Bookings</a>
+                <a href="settings.html">Settings</a>
+            </div>           
+           
         </header>
     </div>
-    <div class="search">
-        <input type="text" placeholder="Search in site" aria-label="Search rooms">
-        <button type="button" class="search-button" aria-label="Search">
-            <i class="fas fa-search">Search</i>
-          </button>
-    </div>
 
-     <!-- Main Content -->
-     <main class="container">
+    <main class="container">
+        <h1>Available Classrooms</h1>
+        
+        <div class="search-container">
+            <input type="text" id="roomSearch" placeholder="Search rooms...">
+            <select id="blockFilter" aria-label="Filter by block">
+                <option value="">Select Block</option>
+                <option value="">All Blocks</option>
+                <option value="E">Block E</option>
+                <option value="F">Block F</option>
+            </select>
+            <button id="searchBtn">Search</button>
+        </div>
+        
+        <div class="room-grid" id="roomGrid">
+            <div class="loading-message">Loading classrooms...</div>
+        </div>
+    </main>
 
-        <!-- Rooms Available for Booking -->
-        <section class="room-list-portion" aria-label="Rooms available for booking">
-            <h2 class="heading">Rooms available for booking</h2>
-            <div class="room-list">
-                <article class="room">
-                    <img src="cu logo.png" alt="Room Icon" loading="lazy">
-                    <p>F101</p>
-                    <span class="status available">Available</span>
-                    <button class="book-button">Book Now</button>
-                </article>
-                
-                <article class="room">
-                    <img src="cu logo.png" alt="Room Icon" loading="lazy">
-                    <p>F201</p>
-                    <span class="status booked">Booked until 2:30pm</span>
-                    <button class="book-button" disabled>Unavailable</button>
-                </article>
-                
-                <article class="room">
-                    <img src="cu logo.png" alt="Room Icon" loading="lazy">
-                    <p>F301</p>
-                    <span class="status available">Available</span>
-                    <button class="book-button">Book Now</button>
-                </article>
-                
-                <article class="room">
-                    <img src="cu logo.png" alt="Room Icon" loading="lazy">
-                    <p>F401</p>
-                    <span class="status available">Available</span>
-                    <button class="book-button">Book Now</button>
-                </article>
-            </div>
-        </section>
-    </main> 
-       
+    <footer class="footer">
+        <p>© 2025 Classroom Allocation Portal. All Rights Reserved.</p>
+    </footer>
+    <script src="cu.js"></script>
 
-          <!-- Footer -->
-          <footer class="footer">
-            <p>© 2025 Classroom Allocation Portal. All Rights Reserved. Group 5</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Accessibility</a>
-            </div>
-        </footer>
-        <script src="cu.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    // Check authentication
+    const auth = JSON.parse(localStorage.getItem('auth'));
+    if (!auth || !auth.isLoggedIn) {
+        window.location.href = 'Login.html';
+        return;
+    }
 
-        <script>
-            // Future JavaScript can be added here
-            document.querySelectorAll('.book-button').forEach(button => {
+    // Room data - complete list of all rooms
+    const allRooms = [
+        // Block E
+        { id: 'E101', block: 'Block E', capacity: 30 },
+        { id: 'E102', block: 'Block E', capacity: 30 },
+        { id: 'E103', block: 'Block E', capacity: 30 },
+        { id: 'E104', block: 'Block E', capacity: 30 },
+        { id: 'E201', block: 'Block E', capacity: 40 },
+        { id: 'E202', block: 'Block E', capacity: 40 },
+        { id: 'E203', block: 'Block E', capacity: 40 },
+        { id: 'E204', block: 'Block E', capacity: 40 },
+        { id: 'E301', block: 'Block E', capacity: 50 },
+        { id: 'E302', block: 'Block E', capacity: 50 },
+        { id: 'E303', block: 'Block E', capacity: 50 },
+        { id: 'E304', block: 'Block E', capacity: 50 },
+        
+        // Block F
+        { id: 'F102', block: 'Block F', capacity: 35 },
+        { id: 'F103', block: 'Block F', capacity: 35 },
+        { id: 'F104', block: 'Block F', capacity: 35 },
+        { id: 'F201', block: 'Block F', capacity: 45 },
+        { id: 'F202', block: 'Block F', capacity: 45 },
+        { id: 'F301', block: 'Block F', capacity: 55 },
+        { id: 'F302', block: 'Block F', capacity: 55 },
+        { id: 'F303', block: 'Block F', capacity: 55 },
+        { id: 'F304', block: 'Block F', capacity: 55 },
+        { id: 'F403', block: 'Block F', capacity: 60 },
+        { id: 'F404', block: 'Block F', capacity: 60 }
+    ];
+
+    // Initialize bookings if not exists
+    if (!localStorage.getItem('bookings')) {
+        localStorage.setItem('bookings', JSON.stringify({
+            past: [],
+            current: [],
+            upcoming: []
+        }));
+    }
+
+    // Function to display all rooms
+    function displayRooms() {
+        const roomGrid = document.getElementById('roomGrid');
+        roomGrid.innerHTML = '';
+        
+        const bookings = JSON.parse(localStorage.getItem('bookings'));
+        const now = new Date();
+        
+        // Create a map of booked rooms with their end times and booking IDs
+        const bookedRooms = {};
+        
+        // Check all bookings to determine room availability
+        [...bookings.upcoming, ...bookings.current].forEach(booking => {
+            const bookingDate = new Date(booking.date);
+            const [hours, minutes] = booking.endTime.split(':').map(Number);
+            const endDateTime = new Date(bookingDate);
+            endDateTime.setHours(hours, minutes);
+            
+            if (now < endDateTime) {
+                bookedRooms[booking.roomId] = {
+                    endTime: booking.endTime,
+                    endDateTime: endDateTime,
+                    bookingId: booking.timestamp, // Using timestamp as unique ID
+                    bookedBy: booking.bookedBy
+                };
+            }
+        });
+
+        // Display each room
+        allRooms.forEach(room => {
+            const isBooked = bookedRooms.hasOwnProperty(room.id);
+            const isMyBooking = isBooked && bookedRooms[room.id].bookedBy === auth.username;
+            const statusText = isBooked ? 
+                `Booked until ${bookedRooms[room.id].endTime}` : 
+                'Available';
+            
+            const roomCard = document.createElement('div');
+            roomCard.className = 'room-card';
+            roomCard.innerHTML = `
+                <div class="room-icon">🏫</div>
+                <h3 class="room-title">${room.id}</h3>
+                <p class="room-block">${room.block} • Capacity: ${room.capacity}</p>
+                <span class="room-status ${isBooked ? 'booked' : 'available'}">${statusText}</span>
+                <button class="book-btn ${isBooked ? (isMyBooking ? 'btn-cancel' : 'btn-booked') : 'btn-available'}" 
+                        data-room="${room.id}" 
+                        ${isBooked && !isMyBooking ? 'disabled' : ''}
+                        data-booking-id="${isBooked ? bookedRooms[room.id].bookingId : ''}">
+                    ${isBooked ? (isMyBooking ? 'Cancel Booking' : 'Unavailable') : 'Book Now'}
+                </button>
+            `;
+            
+            // Add appropriate click handler
+            const button = roomCard.querySelector('.book-btn');
+            if (isBooked && isMyBooking) {
                 button.addEventListener('click', function() {
-                    if (!this.disabled) {
-                        const room = this.closest('.room').querySelector('p').textContent;
-                        alert(`Booking request for ${room} has been submitted!`);
-                    }
+                    cancelBooking(this.getAttribute('data-booking-id'), room.id);
                 });
-            });
-        </script>
+            } else if (!isBooked) {
+                button.addEventListener('click', function() {
+                    openBookingModal(room.id);
+                });
+            }
+            
+            roomGrid.appendChild(roomCard);
+        });
+    }
+
+    // Cancel a booking
+    function cancelBooking(bookingId, roomId) {
+        if (!confirm(`Are you sure you want to cancel booking for Room ${roomId}?`)) {
+            return;
+        }
+        
+        const bookings = JSON.parse(localStorage.getItem('bookings'));
+        
+        // Remove from upcoming bookings
+        bookings.upcoming = bookings.upcoming.filter(b => b.timestamp.toString() !== bookingId);
+        
+        // Remove from current bookings
+        bookings.current = bookings.current.filter(b => b.timestamp.toString() !== bookingId);
+        
+        // Add to past bookings if it was current
+        const cancelledBooking = [...bookings.upcoming, ...bookings.current]
+            .find(b => b.timestamp.toString() === bookingId);
+        
+        if (cancelledBooking) {
+            cancelledBooking.status = 'past';
+            bookings.past.push(cancelledBooking);
+        }
+        
+        localStorage.setItem('bookings', JSON.stringify(bookings));
+        displayRooms();
+        alert(`Booking for Room ${roomId} has been cancelled`);
+    }
+
+    // Booking modal
+    const bookingModal = document.createElement('div');
+    bookingModal.className = 'booking-modal';
+    bookingModal.innerHTML = `
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Book Room <span id="modal-room-id"></span></h2>
+            <form id="booking-form">
+                <div class="form-group">
+                    <label for="booking-date">Date:</label>
+                    <input type="date" id="booking-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="start-time">Start Time:</label>
+                    <input type="time" id="start-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="end-time">End Time:</label>
+                    <input type="time" id="end-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="purpose">Purpose:</label>
+                    <input type="text" id="purpose" placeholder="Class, Meeting, etc." required>
+                </div>
+                <button type="submit" class="btn">Confirm Booking</button>
+            </form>
+        </div>
+    `;
+    document.body.appendChild(bookingModal);
+
+    // Open booking modal with validation
+    function openBookingModal(roomId) {
+        const modal = document.querySelector('.booking-modal');
+        const roomIdElement = document.getElementById('modal-room-id');
+        const dateInput = document.getElementById('booking-date');
+        const startTimeInput = document.getElementById('start-time');
+        const endTimeInput = document.getElementById('end-time');
+        
+        // Set room ID
+        roomIdElement.textContent = roomId;
+        
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.min = today;
+        dateInput.value = today;
+        
+        // Set default times (current time to next hour)
+        const now = new Date();
+        const currentHour = now.getHours().toString().padStart(2, '0');
+        const nextHour = (now.getHours() + 1).toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        
+        startTimeInput.value = `${currentHour}:${minutes}`;
+        endTimeInput.value = `${nextHour}:${minutes}`;
+        
+        // Show modal
+        modal.classList.add('active');
+        
+        // Close modal when clicking outside
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    }
+
+    // Close modal
+    function closeModal() {
+        document.querySelector('.booking-modal').classList.remove('active');
+    }
+
+    // Handle booking form submission
+    document.getElementById('booking-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const roomId = document.getElementById('modal-room-id').textContent;
+        const date = document.getElementById('booking-date').value;
+        const startTime = document.getElementById('start-time').value;
+        const endTime = document.getElementById('end-time').value;
+        const purpose = document.getElementById('purpose').value;
+        
+        // Validate time
+        if (startTime >= endTime) {
+            alert('End time must be after start time');
+            return;
+        }
+        
+        // Create booking object
+        const booking = {
+            roomId,
+            date,
+            startTime,
+            endTime,
+            purpose,
+            status: 'upcoming',
+            timestamp: new Date().getTime(),
+            bookedBy: auth.username
+        };
+        
+        // Save booking
+        const bookings = JSON.parse(localStorage.getItem('bookings'));
+        bookings.upcoming.push(booking);
+        localStorage.setItem('bookings', JSON.stringify(bookings));
+        
+        // Close modal
+        closeModal();
+        
+        // Refresh display
+        displayRooms();
+        
+        // Show confirmation
+        alert(`Room ${roomId} successfully booked from ${startTime} to ${endTime} on ${date}`);
+    });
+
+    // Close modal button
+    document.querySelector('.close-modal').addEventListener('click', closeModal);
+
+    // Search functionality
+    document.getElementById('searchBtn').addEventListener('click', function() {
+        const searchTerm = document.getElementById('roomSearch').value.toLowerCase();
+        const blockFilter = document.getElementById('blockFilter').value;
+        
+        const roomCards = document.querySelectorAll('.room-card');
+        let hasVisibleRooms = false;
+        
+        roomCards.forEach(card => {
+            const roomId = card.querySelector('.room-title').textContent.toLowerCase();
+            const block = card.querySelector('.room-block').textContent;
+            
+            const matchesSearch = searchTerm === '' || roomId.includes(searchTerm);
+            const matchesBlock = blockFilter === '' || block.includes(blockFilter);
+            
+            if (matchesSearch && matchesBlock) {
+                card.style.display = 'block';
+                hasVisibleRooms = true;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        
+        if (!hasVisibleRooms) {
+            const noResults = document.createElement('div');
+            noResults.className = 'no-rooms';
+            noResults.textContent = 'No rooms match your search criteria';
+            document.getElementById('roomGrid').appendChild(noResults);
+        }
+    });
+
+    // Initial load
+    displayRooms();
+
+    // Check booking status every minute
+    setInterval(function() {
+        const bookings = JSON.parse(localStorage.getItem('bookings'));
+        const now = new Date();
+        let needsUpdate = false;
+        
+        // Check upcoming bookings to see if they've started
+        bookings.upcoming = bookings.upcoming.filter(booking => {
+            const bookingDate = new Date(booking.date);
+            const [startHours, startMins] = booking.startTime.split(':').map(Number);
+            const startDateTime = new Date(bookingDate);
+            startDateTime.setHours(startHours, startMins);
+            
+            if (now >= startDateTime) {
+                booking.status = 'current';
+                bookings.current.push(booking);
+                needsUpdate = true;
+                return false;
+            }
+            return true;
+        });
+        
+        // Check current bookings to see if they've ended
+        bookings.current = bookings.current.filter(booking => {
+            const bookingDate = new Date(booking.date);
+            const [endHours, endMins] = booking.endTime.split(':').map(Number);
+            const endDateTime = new Date(bookingDate);
+            endDateTime.setHours(endHours, endMins);
+            
+            if (now >= endDateTime) {
+                booking.status = 'past';
+                bookings.past.push(booking);
+                needsUpdate = true;
+                return false;
+            }
+            return true;
+        });
+        
+        if (needsUpdate) {
+            localStorage.setItem('bookings', JSON.stringify(bookings));
+            displayRooms();
+        }
+    }, 60000); // Check every minute
+});
+    </script>
 </body>
 </html>

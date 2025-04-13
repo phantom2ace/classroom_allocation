@@ -15,18 +15,15 @@
                 <span class="logo-text">Classroom Allocation Portal</span>
             </div>
             
-            <button class="mobile-menu-toggle">☰</button>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
             
             <div class="nav-links">
-                <a href="#">Dashboard</a>
+                <a href="#" class="active">Dashboard</a>
                 <a href="booking.html">Bookings</a>
-                <a href="#">Settings</a>
+                <a href="settings.html">Settings</a>
             </div>           
-           
         </header>
     </div>
-
-   
 
     <!-- Full-width hero container -->
     <div class="hero-container">
@@ -40,10 +37,10 @@
     <div class="container">
         <!-- User info -->
         <div class="user-info">
-            <div class="user-avatar">KT</div>
+            <div class="user-avatar"><span>📚</span></div>
             <div class="user-details">
-                <h3>Kwesi Essel Turkson</h3>
-                <p>Course Rep • Computer Science • Level 300</p>
+                <h3 id="userFullName"></h3>
+                <p id="userRoleInfo"></p>
                 <p>Welcome back, manage your classroom allocations.</p>
             </div>
         </div>
@@ -60,85 +57,30 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Manage bookings section -->
-        <section class="manage-bookings">
-            <h2 class="section-title">Manage Bookings</h2>
-            <p class="section-subtitle">View and make changes to active bookings</p>
+        <!--
+        -->
+       <!-- Add this in your index.html file -->
 
-            <!-- Room cards -->
-            <div class="room-cards">
-                <div class="room-card">
-                    <div class="room-icon sun">
-                        <span>☀️</span>
-                    </div>
-                    <p class="room-number">Room 101</p>
-                    <p class="room-details">Wednesday, 07/14</p>
-                    <p class="room-department">Computer science</p>
-                    <p class="room-level">Level 100</p>
-                </div>
-                <div class="room-card">
-                    <div class="room-icon calendar">
-                        <span>📅</span>
-                    </div>
-                    <p class="room-number">Room 201</p>
-                    <p class="room-details">Thursday, 07/15</p>
-                    <p class="room-department">IT</p>
-                    <p class="room-level">Level 300</p>
-                </div>
-                <div class="room-card">
-                    <div class="room-icon book">
-                        <span>📚</span>
-                    </div>
-                    <p class="room-number">Room 301</p>
-                    <p class="room-details">Friday, 07/16</p>
-                    <p class="room-department">Computer Science</p>
-                    <p class="room-level">Level 200</p>
-                </div>
-            </div>
-
-            <!-- Booking details -->
-            <div class="booking-details">
-                <div class="booking-detail">
-                    <h4>Week</h4>
-                    <p>Week of July 14, 2023</p>
-                </div>
-                <div class="booking-detail">
-                    <h4>Room Number</h4>
-                    <p>101</p>
-                </div>
-                <div class="booking-detail">
-                    <h4>Time slot</h4>
-                    <p>2:00 PM - 3:00 PM</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Metrics section -->
-        <section class="metrics">
-            <h2 class="metrics-title">Booking Metrics</h2>
-            <p class="metrics-subtitle">Your booking statistics</p>
-            <div class="metrics-btn">
-                <button class="btn">View Details</button>
-            </div>
-
-            <div class="metrics-cards">
-                <div class="metrics-card">
-                    <h3>Past Bookings</h3>
-                    <p class="metrics-number">25</p>
-                    <p class="metrics-change">+15%</p>
-                </div>
-                <div class="metrics-card">
-                    <h3>Current Bookings</h3>
-                    <p class="metrics-number">15</p>
-                </div>
-                <div class="metrics-card">
-                    <h3>Upcoming Bookings</h3>
-                    <p class="metrics-number">8</p>
-                </div>
-            </div>
-        </section>
+       <!--
+<section class="manage-bookings">
+    <h2 class="section-title">Manage Bookings</h2>
+    <p class="section-subtitle">View and make changes to active bookings</p>
+    -->
+    
+    <div class="room-cards">
+      <!-- Booking cards will be inserted here by JavaScript -->
     </div>
+    
+    <!--
+    <div class="booking-details">
+      <div class="booking-detail">
+        <h4>Next Booking</h4>
+        <p id="nextBooking">Loading...</p>
+      </div>
+    </div>
+  </section>
+-->
+ 
 
     <!-- Footer -->
     <footer class="footer">
@@ -146,5 +88,7 @@
     </footer>
 
     <script src="cu.js"></script>
+    <script src="user-display.js"></script>
+    <script src="booking-system.js"></script>
 </body>
 </html>
