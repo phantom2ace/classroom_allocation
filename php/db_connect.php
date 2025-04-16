@@ -1,8 +1,9 @@
 <?php
 $host = 'localhost';
 $db = 'elvicky';
-$user = 'your_db_user';
-$pass = 'your_db_password';
+$pass = 'EllisPass2024#';
+$user = 'root';
+
 
 $conn = new mysqli($host, $user, $pass, $db);
 
