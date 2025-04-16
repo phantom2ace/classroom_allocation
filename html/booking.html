@@ -392,7 +392,7 @@
     }, 60000); // Check every minute
 });
     </script>
-    <form action="php/book_classroom.php" method="POST"></form>
-    
+    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+
 </body>
 </html>

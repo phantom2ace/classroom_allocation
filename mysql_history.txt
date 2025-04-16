@@ -1,0 +1,68 @@
+Script started on 2025-04-16 00:58:09+00:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="29" LINES="12"]
+]0;ellis@ellis-HP-Laptop-15-da0xxx: ~/classroom-allocation-portal[01;32mellis@ellis-HP-Laptop-15-da0xxx[00m:[01;34m~/classroom-allocation-por
+tal[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmysql --help | grep "Def
+ault options" -A 1^C
+]0;ellis@ellis-HP-Laptop-15-da0xxx: ~/classroom-allocation-portal[01;32mellis@ellis-HP-Laptop-15-da0xxx[00m:[01;34m~/classroom-allocation-por
+tal[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C'/home/ellis/classroom-a
+llocation-portal/php/book_classroom.php'[K[A[A[A[A]0;ellis@ellis-HP-Laptop-15-da0xxx: ~/classroom-allocation-portal[01;32mellis@ellis-HP-Laptop-15-da0xxx[00m:[01;34m~/classroom-allocation-portal[00m$ '/home/ellis/classroom-allocation-portal/php/book_cl
+assroom.php'
+bash: /home/ellis/classroom-allocation-portal/php/book_classroom.php: Permission denied
+]0;ellis@ellis-HP-Laptop-15-da0xxx: ~/classroom-allocation-portal[01;32mellis@ellis-HP-Laptop-15-da0xxx[00m:[01;34m~/classroom-allocation-portal[00m$ 
+]0;ellis@ellis-HP-Laptop-15-da0xxx: ~/classroom-allocation-portal[01;32mellis@ellis-HP-Laptop-15-da0xxx[00m:[01;34m~/classroom-allocation-portal[00m$ 
+]0;ellis@ellis-HP-Laptop-15-da0xxx: ~/classroom-allocation-portal[01;32mellis@ellis-HP-Laptop-15-da0xxx[00m:[01;34m~/classroom-allocation-portal[00m$ [K]0;ellis@ellis-HP-Laptop-15-da0xxx: ~/classroom-allocation-portal[01;32mellis@ellis-HP-Laptop-15-da0xxx[00m:[01;34m~/classroom-allocation-portal[00m$ n
+ano ~/.mysql_history
+[?2004h[?1049h[22;0;0t[1;12r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[10;8H(B[0;7m[ Reading... ](B[m[7G(B[0;7m[ Read 4 lines ](B[m[H(B[0;7m/home/ellis/.mysql_history   [1;27H(B[m[11d(B[0;7m^G(B[m Get He(B[0;7m^O(B[m Write (B[0;7m^W(B[m Where Is[12;1H(B[0;7m^X(B[m Exit  (B[0;7m^R(B[m Read F(B[0;7m^\(B[m Replace[10d[2d[39;49m(B[m_HiStOrY_V2_[3dFLUSH\040PRIVILEGES;[4dEXIT;[5dExit[2d[?12l[?25h[12;1H[?1049l[23;0;0t[?1l>[?1049h[22;0;0t[1;12r[?12l[?25h[39;49m]104(B[m[4l[?7h[H[2J(B[0;7m/home/ellis/.mysql_history   [2d(B[m_HiStOrY_V2_[3dFLUSH\040PRIVILEGES;[4dEXIT;[5dExit[10d  (B[0;7m[ Read 4 lines ][11d^G(B[m Get He(B[0;7m^O(B[m Write (B[0;7m^W(B[m Where Is[12d(B[0;7m^X(B[m Exit  (B[0;7m^R(B[m Read F(B[0;7m^\(B[m Replace[2d[?2004h[?1h=[?1h=[H[2J(B[0;7m/home/ellis/.mysql_history   [2d(B[m_HiStOrY_V2_[3dFLUSH\040PRIVILEGES;[4dEXIT;[5dExit[10d[H(B[0;7m  GNU nano 4.8                                /home/ellis/.mysql_history                                           [1;114H(B[m[11d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[12d(B[0;7m^X(B[m Exit[12;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[10d[?25l[2d[?12l[?25h[?25l[?12l[?25h[12;1H[?1049l[23;0;0t[?1l>[?1049h[22;0;0t[1;12r[?12l[?25h[39;49m]104(B[m[4l[?7h[H[2J(B[0;7m  GNU nano 4.8               [2;1H(B[m_HiStOrY_V2_[3dFLUSH\040PRIVILEGES;[4dEXIT;[5dExit[11d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out[12d(B[0;7m^X(B[m Exit[12;17H(B[0;7m^R(B[m Read File[2d[?2004h[?1h=[?1h=[H[2J(B[0;7m  GNU nano 4.8               [2;1H(B[m_HiStOrY_V2_[3dFLUSH\040PRIVILEGES;[4dEXIT;[5dExit[10d[H(B[0;7m/home/ellis/.mysql_history(B[m[11d(B[0;7m^G(B[m Get He(B[0;7m^O(B[m Write (B[0;7m^W(B[m Where Is[12;1H(B[0;7m^X(B[m Exit  (B[0;7m^R(B[m Read F(B[0;7m^\(B[m Replace[10d[?25l[2d[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[12;1H[?1049l[23;0;0t[?1l>[?2004l
+
+Use "fg" to return to nano.
+
+[1]+  Stopped                 nano ~/.mysql_history
+]0;ellis@ellis-HP-Laptop-15-da0xxx: ~/classroom-allocation-portal[01;32mellis@ellis-HP-Laptop-15-da0xxx[00m:[01;34m~/classroom-allocation-por
+tal[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Chistory | grep mysql[C[C[C[C[C[C[C[C[C[C[C[C
+   19  sudo apt install [01;31m[Kmysql[m[K-server
+   20  sudo service [01;31m[Kmysql[m[K status
+   21  sudo ss -tap | grep [01;31m[Kmysql[m[K
+   24  sudo rm -rf /etc/[01;31m[Kmysql[m[K
+   53  sudo systemctl stop [01;31m[Kmysql[m[K 
+   61  sudo apt install php libapache2-mod-php php-[01;31m[Kmysql[m[K
+   86  sudo apt-get purge apache2 [01;31m[Kmysql[m[K-server php libapache2-mod-php php-[01;31m[Kmysql[m[K
+   87  udo apt-get purge apache2 [01;31m[Kmysql[m[K-server php libapache2-mod-php php-[01;31m[Kmysql[m[K
+   88  sudo apt-get purge apache2 [01;31m[Kmysql[m[K-server php libapache2-mod-php php-[01;31m[Kmysql[m[K
+   93  sudo rm -rf /etc/[01;31m[Kmysql[m[K
+   97  sudo apt install apache2 [01;31m[Kmysql[m[K-server php libapache2-mod-php php-[01;31m[Kmysql[m[K
+   99  [01;31m[Kmysql[m[K --version
+  102  sudo systemctl status [01;31m[Kmysql[m[K
+  103  sudo systemctl start [01;31m[Kmysql[m[K
+  104  journalctl -xeu [01;31m[Kmysql[m[K
+  105  sudo cat /var/log/[01;31m[Kmysql[m[K/error.log
+  106  sudo cat /var/log/[01;31m[Kmysql[m[K/[01;31m[Kmysql[m[K.log
+  107  sudo less /var/log/[01;31m[Kmysql[m[K/error.log
+  108  sudo systemctl status [01;31m[Kmysql[m[K.service -l
+  109  sudo nano /etc/[01;31m[Kmysql[m[K/[01;31m[Kmysql[m[K.conf.d/[01;31m[Kmysql[m[Kd.cnf
+  110  sudo less /var/log/[01;31m[Kmysql[m[K/error.log
+  114  sudo systemctl stop [01;31m[Kmysql[m[K
+  115  sudo apt-get purge [01;31m[Kmysql[m[K-server [01;31m[Kmysql[m[K-client [01;31m[Kmysql[m[K-common [01;31m[Kmysql[m[K-server-core-* [01;31m[Kmysql[m[K-client-core-*
+  116  sudo rm -rf /etc/[01;31m[Kmysql[m[K /var/lib/[01;31m[Kmysql[m[K
+  119  dpkg -l | grep [01;31m[Kmysql[m[K
+  121  sudo apt-get purge [01;31m[Kmysql[m[K-common [01;31m[Kmysql[m[K-server-8.0 php-[01;31m[Kmysql[m[K php7.4-[01;31m[Kmysql[m[K
+  122  sudo rm -rf /etc/[01;31m[Kmysql[m[K /var/lib/[01;31m[Kmysql[m[K
+  125  sudo apt-get purge [01;31m[Kmysql[m[K-common [01;31m[Kmysql[m[K-server-8.0 php-[01;31m[Kmysql[m[K php7.4-[01;31m[Kmysql[m[K
+  130  dpkg -l | grep [01;31m[Kmysql[m[K
+  131  sudo dpkg --remove --force-remove-reinstreq [01;31m[Kmysql[m[K-common [01;31m[Kmysql[m[K-server-8.0 php7.4-[01;31m[Kmysql[m[K
+  132  sudo dpkg --purge [01;31m[Kmysql[m[K-common [01;31m[Kmysql[m[K-server-8.0 php7.4-[01;31m[Kmysql[m[K
+  135  dpkg -l | grep [01;31m[Kmysql[m[K
+  139  sudo apt install [01;31m[Kmysql[m[K-server
+  140  sudo apt install php php-[01;31m[Kmysql[m[K libapache2-mod-php php7.4-[01;31m[Kmysql[m[K
+  141  sudo [01;31m[Kmysql[m[K_secure_installation
+  142  sudo systemctl start [01;31m[Kmysql[m[K
+  143  sudo systemctl enable [01;31m[Kmysql[m[K
+  144  sudo [01;31m[Kmysql[m[K -u root -p
+  173  [01;31m[Kmysql[m[K -u root -p
+  177  [01;31m[Kmysql[m[K -u root -p
+  180  sudo systemctl status [01;31m[Kmysql[m[K
+  188  sudo [01;31m[Kmysql[m[K
+  189  [01;31m[Kmysql[m[K -u root -p
+  195  nano ~/.[01;31m[Kmysql[m[K_history
+  196  history | grep [01;31m[Kmysql[m[K
+]0;ellis@ellis-HP-Laptop-15-da0xxx: ~/classroom-allocation-portal[01;32mellis@ellis-HP-Laptop-15-da0xxx[00m:[01;34m~/classroom-allocation-por
+tal[00m$ [K[A[A]0;ellis@ellis-HP-Laptop-15-da0xxx: ~/classroom-allocation-portal[01;32mellis@ellis-HP-Laptop-15-da0xxx[00m:[01;34m~/classroom-allocation-portal[00m$ [K]0;ellis@ellis-HP-Laptop-15-da0xxx: ~/classroom-allocation-portal[01;32mellis@ellis-HP-Laptop-15-da0xxx[00m:[01;34m~/classroom-allocation-por
+tal[00m$ [K[A[A]0;ellis@ellis-HP-Laptop-15-da0xxx: ~/classro
