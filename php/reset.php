@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['new_password'], $_GET[
         session_regenerate_id(true); // Secure the session ID
 
         $_SESSION['password_reset_success'] = "Your password has been successfully reset.";
-        header("Location: dashboard.php"); // Redirect to a secure page (dashboard)
+        header("Location: book_classroom.php"); // Redirect to a secure page (dashboard)
         exit();
     } else {
         echo "Invalid reset token.";

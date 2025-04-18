@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (password_verify($password, $password_hash)) {
             // Successful login, set session data
             $_SESSION['user_id'] = $id;
-            header("Location: dashboard.php");
+            header("Location: book_classroom.php");
             exit();
         } else {
             echo "Invalid password.";
